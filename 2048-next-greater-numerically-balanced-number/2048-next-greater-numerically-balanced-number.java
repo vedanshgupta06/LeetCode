@@ -1,9 +1,9 @@
 class Solution {
     public int nextBeautifulNumber(int n) {
-        HashMap<Integer,Integer> map=new HashMap<>();
         if(n==0)return 1;
-        int min=n,max=1000000;
+        int min=n;
         while(true){
+        HashMap<Integer,Integer> map=new HashMap<>();
             if(min>n){
                 int m=min;
                 while(m>0){
@@ -18,7 +18,6 @@ class Solution {
                 boolean flag=true;
                 for(int ele:map.keySet()){
                     if(ele!=map.get(ele)){
-                        map.clear();
                         flag=false;
                         break;
                     }
